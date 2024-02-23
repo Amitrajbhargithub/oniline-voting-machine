@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    .form-control
+    {
+    margin-bottom:8px;
+    }
+</style>
+<div class="row pt-3 mb-1 pb-5 bg-light">
+    <div class="h2 text-center">Contact <b style="color:#ffab00">Us <i class="fa fa-phone fa-spin"></i> </b></div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-10 bg-white">
+        <div class="row">
+            <div class="col-sm-7">
+              <!--  <img src="{% static 'images/slider-image-2.jpg' %}" style="height:70%;width:100%;"/> -->
+            </div>
+            <div class="col-sm-5 p-5">
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}<!-- cross site reforgery -->
+                    {% if S %}
+                    <div class="alert alert-success">
+                        Thanks for enquiry...
+                    </div>
+                    {% endif %}
+                Name <input type="text" class="form-control" name="name" placeholder="Enter Your Name..." required/>
+                Email <input type="email" class="form-control" name="email" placeholder="Enter Your E-mail..." required/>
+                Mobile No. <input type="number" class="form-control" name="mobile" placeholder="Enter Your Mobile No..." required/>
+                Message<textarea class="form-control" name="msg" required></textarea>
+                <input type="submit" value="Save" class="btn btn-warning"/>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+</div>
+{% endblock %}

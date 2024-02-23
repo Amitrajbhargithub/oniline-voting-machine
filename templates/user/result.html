@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="h2">
+    Vote Result
+</div>
+<div class="row" style="min-height:500px">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <div class="row">
+            {%if vote %}
+            {% for x in vote%}
+            <div class="col-sm-3">
+                <div class="row p-2">
+                    <div class="col-sm-12 bg-warning rounded text-center fs-2"
+                         style="min-height:120px;padding-top:35px;"><b>{{x.0}}</b>: {{x.1}}<br>
+                    </div>
+                </div>
+            </div>
+            {%endfor %}
+            {% endif%}
+        </div>
+    </div>
+    <div class="col-sm-3"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% if request.session.aadhar %}
+<style>
+    .vote
+    {
+    min-height:500px;
+    }
+
+
+</style>
+<div class="row">
+    <div class="h2 text-center">Choose one for your Party</div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4 vote bg-light my-3 p-5">
+        <form method="post">
+            {% csrf_token %}
+            {% if party %}
+            {% for x in party %}
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/{{x.ppic}}" style="max-height:110px;" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body pt-3">
+                            <b class="card-title fs-1 ">{{x.name}}</b>
+                            <input type="radio" style="transform:translate(50px,20px);" name="vote"
+                                   class="form-check-input " value="{{x.name}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <input type="submit" value="Save" class="btn btn-warning">
+
+        </form>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+{% else %}
+<script>
+    alert("You have to login first..")
+    window.location.href="/user/home/"
+
+</script>
+{%endif%}
+{% endblock %}

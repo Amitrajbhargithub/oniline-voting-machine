@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="h2 text-center sectionTitle">Upcoming<span class="themeText"> Election</span></div>
+    <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="row">
+            <div class="col-sm-12">
+                {% if data %}
+                {% for x in data %}
+                <div class="card my-3">
+                    <div class="card-header">
+                        {{x.etitle}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{x.city}} ({{x.state}})</h5>
+                        <p class="card-text">{{x.edes}}</p>
+                        <a href="#" class="btn btn-warning"><i class="fa fa-calendar"></i> {{x.edate}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-2"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+.login
+{
+background:white;
+
+font-size:20px;
+transition:all ease 1s;
+}
+
+
+</style>
+<div class="row mx-0 mb-1 bg-light">
+    <div class="col-sm-12 py-4 inner bg-light" style="background:rgba(256,256,256,.6);">
+        <div class="h1 text-center p-1 text-light">
+            <u style="color:#ffab00; text-size:45px;"> SIGN</u><SPAN STYLE="COLOR:BLACK"> IN </span>
+            <span style="color:black;" class="fa fa-key fa-spin">
+            </span>
+        </div>
+
+        <div class="row px-4">
+            <div class="col-sm-4"></div>
+
+            <div class="col-sm-4 login my-1 rounded p-5">
+                <form method="post" autocomplete="off">
+                    {% csrf_token %}
+                    USERNAME
+                    <input type="text" name="uname" class="form-control" placeholder="Enter Your Aadhar No..."/><br/>
+                    PASSWORD<input name="upasswd" type="password" placeholder="Enter Your Password..."
+                                   class="form-control"/><br/>
+                    <input type="submit" value="SIGN IN" style="border:none;" class="btn btn-warning text-light form-control"/>
+                    <center class="mt-4" style="font-size:14px;">Create new account? <a href="#" style="text-decoration:none;color:red;">Register
+                        now.</a></center>
+                </form>
+            </div>
+
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

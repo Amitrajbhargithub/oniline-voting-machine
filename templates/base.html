@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet"/>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/mainAj.css' %}" rel="stylesheet"/>
+
+
+    <style>
+        body {
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+    /*overflow-x: hidden;*/
+}
+
+p {
+    font-size: 13px;
+    color: #555;
+}
+
+.tinyHeader {
+    height: 25px;
+    background: #f7f7f7;
+    border-bottom: 1px solid #efefef;
+    color: #777;
+    font-size: 12px;
+}
+
+    .tinyHeader .textContent {
+        line-height: 25px;
+        display: inline-block;
+        margin: 0px 5px;
+    }
+
+        .tinyHeader .textContent i {
+            border: 1px solid #ddd;
+            padding: 3px;
+            font-size: 10px;
+            border-radius: 50%;
+        }
+
+        .tinyHeader .textContent a {
+            display: inline-block;
+            margin: 0px 5px;
+            color: #777;
+            text-decoration: none;
+            transition: .4s;
+        }
+
+            .tinyHeader .textContent a:hover {
+                color: #fbaf0c;
+            }
+
+            .tinyHeader .textContent a i {
+                display: inline-block;
+                height: 23px;
+                width: 23px;
+                line-height: 17px;
+                font-size: 12px;
+                text-align: center;
+            }
+
+            .tinyHeader .textContent a:hover i {
+                border: 1px solid #fbaf0c;
+            }
+
+/*TOP HEADER*/
+
+.mainHeader {
+    position: sticky;
+    top: 0px;
+    background: #fff;
+    box-shadow: 0 1px 5px #00000022;
+}
+
+/*Header CSS END*/
+
+
+        .category
+        {
+        min-height:200px;
+        }
+        .newproduct
+        {
+        min-height:500px;
+        background:#ffab00;
+        }
+        .services
+        {
+        min-height:500px;
+        }
+        .ufooter
+        {
+        min-height:300px;
+        background:#212529;
+        }
+        .bfooter
+        {
+        min-height:45px;
+        background:#212529;
+        margin-top:1px;
+        }
+        .offer
+        {
+        min-height:400px;
+        }
+/*viewparties*/
+#viewparties {
+    position: fixed;
+    right: 0px;
+    z-index: 0;
+    background: #fbaf0c;
+    transform: rotate(45deg);
+    transform-origin: right;
+    top: 100px;
+    box-shadow: 0px 2px 6px 0px #ada2a3;
+    padding: 6px 51px;
+    font-size: 14px;
+    animation: slideCerti 1.5s linear forwards;
+    opacity: 0;
+    transform: scale(9) rotate(45deg);
+    animation-delay: 3s;
+    transition: all ease .5s;
+}
+#viewparties:hover {
+    box-shadow: 0px 4px 6px 0px #ada2a3;
+}
+
+#viewparties a{
+    color: #fff;
+    text-decoration: none;
+}
+@keyframes slideCerti {
+    0% {
+        opacity: 0;
+        right: 100px;
+        filter: blur(50px);
+        top: 100px;
+        z-index: 0;
+        transform: scale(9) rotate(45deg);
+    }
+    30% {
+        opacity: 0;
+        z-index: 90000;
+    }
+    100% {
+        opacity: 1;
+        z-index: 90000;
+        right: -28px;
+        top: 100px;
+        filter: blur(0px);
+        transform: scale(1) rotate(45deg);
+    }
+}
+
+    </style>
+</head>
+<body>
+<!-- upper header-->
+<div class="container-fluid tinyHeader">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="col text-center">
+                    <span class="textContent">
+                        <i class="fa fa-phone fa-spin"></i>
+                        <a href="tel:+918953151587">Helpline No : +91 7521943594</a> |
+                    </span>
+                <span class="textContent">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:shreydub005@gmail.com">shreydub005@gmail.com</a>
+                    </span>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="col text-center">
+                    <span class="textContent">
+
+                        <a href="https://www.facebook.com/techpilelko" title="Facebook" target="_blank"><i
+                                class="fa fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/techpileL" title="Twitter" target="_blank"><i
+                                class="fa fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/tptlko/" title="Instagram" target="_blank"><i
+                                class="fa fa-instagram"></i></a>
+                        <a href="https://api.whatsapp.com/send?phone=+917007237006" title="Whatsapp" target="_blank"><i
+                                class="fa fa-whatsapp"></i></a>
+                        <a href="https://www.youtube.com/techpilelko" title="Youtube" target="_blank"><i
+                                class="fa fa-youtube"></i></a>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div id="viewparties">
+        <a href="/user/home/">View Parties..</a>
+    </div>
+</div>
+<!--top header-->
+<header class="sticky sticky-top mainHeader">
+    <nav class="navbar  navbar-expand-lg navbar-info top-navbar" data-toggle="sticky-onscroll">
+        <div class="container max1200">
+            <a class="navbar-brand fs-3" href="/home/">
+
+                <b style="color:#ffab00"><font color="red">Vo</font></b>Te Online <font color="red"><i class="fa fa-address-card-o"></i></font>
+
+            </a>
+
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>MENU
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/home/"><i class="fa fa-home"></i>
+                            Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">User Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/uelection">Upcoming Election</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contactus">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/result">Election Result</a>
+                    </li>
+                    {% if request.session.aadhar %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/user/logout">Sign Out</a>
+                    </li>
+                    {% else %}
+                      <li class="nav-item">
+                        <a class="nav-link" href="/user/usignin/">Sign In</a>
+                    </li>
+                    {% endif%}
+
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+</header>
+<!-- End top header-->
+<div class="container-fluid outer">
+<section>
+
+            {% block content %}
+            {% endblock %}
+
+</section>
+    <div class="row ufooter text-center bg-info text-muted p-5">
+        <!-- start ufooter -->
+
+        <!-- Footer -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+
+            <!-- Content -->
+            <h6 class="text-uppercase font-weight-bold">Company name</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>Here you can use rows and columns to organize your footer content. Lorem ipsum dolor sit amet,
+                consectetur
+                adipisicing elit.</p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Products</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+                <a class="dark-grey-text" href="/user/home/">Home </a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href="/user/aboutus/">About Us </a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href="/user/product/">Products</a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href="/user/contactus/ ">Contact Us</a>
+            </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <p>
+                <a class="dark-grey-text" href="/user/signup/ ">Sign Up</a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href=" /user/myorders/">My Orders</a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href=" /user/myprofile/">My Profile</a>
+            </p>
+            <p>
+                <a class="dark-grey-text" href="/user/signin/">Signin</a>
+            </p>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+            <!-- Links -->
+            <h6 class="text-uppercase font-weight-bold">Contact</h6>
+            <hr class="teal accent-3 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+            <a href="#">
+                <p>
+                    <i class="fa fa-home mr-3"></i> UP handia 221508 India</p></a>
+            <p>
+                <a href="mailto:rahulbind1000@gmail.com">
+                    <i class="fa fa-envelope mr-3"></i> rahulbind1000@gmail.com </a></p>
+            <p>
+                <a href="tel:+918953161587">
+                    <i class="fa fa-phone mr-3"></i> + 91 8953161587</a></p>
+            <p>
+                <a href="mailto:rahulbind1000@gmail.com">
+                    <i class="fa fa-print mr-3"></i> rahulbind1000@gmail.com </a>
+            </p>
+        </div>
+        <!-- Grid column -->
+
+    </div>
+    <!-- Footer -->
+    <!-- end ufooter -->
+
+    <div class="row bfooter text-light text-center py-2">
+        <!-- start bfooter -->
+        <div class="col-sm-6">Developed By : Rahul kumar</div>
+        <div class="col-sm-6">&copy; ONLIN E VOATING.</div>
+        <!-- end bfooter -->
+    </div>
+</div>
+</body>
+</html>

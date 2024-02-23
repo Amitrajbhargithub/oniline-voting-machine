@@ -1,0 +1,103 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<style>
+    #register .form-control
+    {
+    margin-bottom:15px;
+    }
+
+
+</style>
+
+<form class="form" method="post" enctype="multipart/form-data" id="register" autocomplete="off">
+    <div class="row" style="background:#f4f4f4;">
+        <div class="col-sm-6" style="padding:3% 4%;">
+            <h3 class="sectionTitle">User <span class="themeText">Register</span></h3>
+            <p class="sectionContent">
+                Free Register yourself for the upcoming voting from Home organize by Indian Government
+            </p>
+            <div class="col-sm-12" style="background:white;padding:3%;">
+                {% csrf_token %}
+                {% if S %}
+                <div class="alert alert-success">
+                    Thanks for SignUp...
+                </div>
+                {% endif %}
+                Name<input type="text" name="uname"  required class="form-control" placeholder="Enter Your Name.."/>
+             Gender<br/>
+           <input type="radio" value="Male" name="ugender" required/>Male
+           <input type="radio" value="Female" name="ugender" required/>Female<br/><br/>
+             Date of Birth<input type="date" min="2003-01-01"  name="udob"  required class="form-control"/>
+           Contact No.<input type="number" name="umobile"  required class="form-control" placeholder="Enter Your Contacat No.."/>
+           Adhar No.<input type="number" name="uadhar"  required class="form-control" placeholder="Enter Your Adhar No.."/>
+           Password<input type="password" name="upasswd"  required class="form-control" placeholder="Create Password..."/>
+           State<input type="text" name="ustate"  required class="form-control" placeholder="Enter Your State.."/>
+           City<input type="text" name="ucity"  required class="form-control" placeholder="Enter Your City.."/>
+           Date of Registration<input type="date" name="rdate"  required class="form-control"/>
+           Profile Picture<input type="file" name="upic"  required class="form-control"/>
+           <br/>
+           <input type="submit" value="Register" class="btn btn-warning form-control"/>
+            <center>Already have an account <a href="#">Login In.</a></center>
+
+            </div>
+
+        </div>
+
+        <div class="col-sm-6" style="padding:2.6% 4%;">
+            <h3 class="sectionTitle">Online Voting<span class="themeText"> Benefits</span></h3>
+            <p class="sectionContent">
+                Some Online Voting Benefits
+            </p>
+            <div class="col-sm-12 ps-4 pe-2" style="background:white;">
+                <ol style="padding:3%;">
+
+                    <li>Easy and efficient — takes only a minute or two to vote</li>
+                    <li>Convenient — people can vote online when it suits them - there's no ballot to mail or meeting to
+                        attend
+                    </li>
+                    <li>Higher response rates — email reminders and online convenience boost participation for busy
+                        owners
+                    </li>
+
+
+                    <li>No supply costs — no paper ballots, no postage and no printing</li>
+                    <li>No equipment — 100% hosted and electronic</li>
+                    <li>Automated — no time or resources needed for manual hand counts</li>
+                    <li>Cost-effective — conduct multiple votes annually</li>
+
+
+                    <li>Quick and easy — full-service setup and management saves you time, so you can work on other
+                        projects
+                    </li>
+                    <li>Automatic vote tallying — no manual counts of paper ballots</li>
+                    <li>Accurate — no duplicate or invalidated ballots</li>
+                    <li>No waiting for results — real-time results, no waiting for ballots in the mail</li>
+                    <li>Print the results — print out the results and use it to help tally physical ballots if they
+                        exist.
+                    </li>
+
+
+                    <li>Private — our third-party service provides a layer of separation between the voting process and
+                        individuals involved
+                    </li>
+                    <li>Secure — no unsecured paper ballots</li>
+                    <li>Authentication — each vote is captured with a date and timestamp along with the voter's internet
+                        address
+                    </li>
+
+
+                    <li>100% Green friendly — not a single tree is harmed in this easy to use electronic voting
+                        process!
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+
+</form>
+
+
+{% endblock %}
